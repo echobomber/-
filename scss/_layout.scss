@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+}
+body,html{
+    font-family: arial,sans-serif;
+    background-color: #efe9e7;
+    color: #3D1101;
+}
+a{
+    text-decoration: none;
+}
+.wrap{
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.topNav{
+    background-color: #000000;
+    opacity: 0.8;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    @include ipad(){
+        &.openMenu{
+            ul{
+                max-height: 573px;
+            } 
+        }
+    }
+    a{
+        color: #ffffff;
+        display: block;
+    }
+    .wrap{
+        display: flex;
+        justify-content: space-between;
+        @include ipad(){
+            flex-wrap: wrap;
+        }
+    }
+    ul{
+        display: flex;
+        transition: all 0.5s;
+        @include ipad(){
+            max-height: 0;
+            overflow: hidden;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        li{
+            @include ipad(){
+                width: 100%;
+                &:last-child a{
+                    margin-right: 0;
+                }
+            }
+        }
+        a{
+            line-height: 1.25rem;
+            padding: 18px 31px;
+            white-space: nowrap;
+            transition: all 0.5s;
+            @include ipad(){
+                text-align: center;
+            }
+        }
+        & a:hover{
+            background-color: #ffffff;
+            color: #000000;
+        }
+    }
+    .Menu-toggle{
+        display: none;
+        position: absolute;
+        padding: 20px;
+        right: 10px;
+        top: 0;
+        @include ipad(){
+            display: block;
+        }
+    }
+}
+.topNav-logo{
+    display: block;
+    width: 120px;
+    height: 56px;
+    background-image: url(../img/logo_w@svg.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.banner{
+    background-image: url(../img/header_desktop.png);
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include ipad(){
+        background-image: url(../img/header_mobile.png);
+    }
+}
+.banner-text{
+    color: white;
+    background-color: rgba(0,0,0,0.35);
+    padding: 40px 20px;
+    text-align: center;
+    @include ipad(){
+        padding: 40px 10px;
+    }
+    h2{
+        font-size: 2.25rem;
+        line-height: 3rem;
+        margin-bottom: 1rem;
+    }
+    p{
+        line-height: 1.25rem;
+    }
+    .fa-utensils{
+        margin: 0 5px;
+    }
+    br{
+        display: none;
+        @include ipad(){
+            &:nth-child(1){
+                display: inline;
+            }
+        }
+    }
+}

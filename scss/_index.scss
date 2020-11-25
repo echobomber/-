@@ -1,0 +1,287 @@
+.tips-title{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h3{
+        font-size: 1.25rem;
+        line-height: 2rem;
+        position: relative;
+        top: 2rem;
+        background-color: #efe9e7;
+        padding: 0 15px;
+        font-weight: bold;
+    }
+    .tips-hr{
+        width: 460px;
+        height: 1px;
+        background:#979797;
+        margin: 0 auto;
+        @include ipad(){
+            display: none;
+        }
+    }
+}
+.tips-intro{
+    margin-top: 60px;
+    margin-bottom: 50px;
+    @include ipad(){
+        margin-bottom: 0;
+    }
+    ul{
+        display: flex;
+        justify-content: space-between; 
+        @include ipad(){
+            flex-direction: column;
+        }  
+    }
+    li{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include ipad(){
+            margin-bottom: 40px;
+        }
+        h3{
+            margin: 20px 0 10px 0;
+        }
+        p{
+            padding: 0 30px;
+            line-height: 1.5rem;
+            @include ipad(){
+                padding: 0;
+            }
+        }
+    }
+    img{
+        border-radius: 50%;
+        display: block;
+    }
+}
+.chief{
+    background-color: #3d1101;
+    color: #ffffff;
+    .wrap{
+        display: flex; 
+        flex-wrap: wrap;
+        align-items: flex-start; //預設是 stretch, 會讓圖片 y 軸伸縮，用這行 css 取消掉
+        @include ipad(){
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}
+.chief-img{
+    background-image: url('../img/main_chef_brown.png');
+    background-size: cover;
+    background-position: center center;
+    width: 50%;
+    height: 460px;
+    @include ipad(){
+        background-position: top center;
+        width: 100%;  
+    }
+}
+.chief-intro{
+    margin: 80px 0 0 2%;
+    width: 43%;
+    @include ipad(){
+        width: 85%;
+        margin: 30px auto;
+    }
+    h2{
+        font-size: 1.25rem;
+        line-height: 2rem;
+    }
+    p{
+        // 偽類 nth:child() 指的是 "所有的" 子元素，包含 h2、p......
+        &:nth-of-type(1){
+            margin-bottom: 16px;
+        }
+        line-height: 1.5rem;
+    }
+}
+.recommend{
+    margin-bottom: 50px;
+    h3{
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: center;
+        padding: 50px 0 32px 0;
+    }
+    ul{
+        display: flex;
+        justify-content: space-between;
+        @include ipad(){
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    li{
+        display: flex;
+        //flex-wrap: wrap;
+        @include ipad(){
+            margin-bottom: 30px;
+        }
+        img{
+            border-radius: 50%;
+            display: block;
+            width: 67px;
+            height: 67px;  // 沒寫死寬高會被伸縮，必須寫死
+        }
+    }
+}
+.recommend-text{
+    width: 100%;
+    margin-top: 22px;
+    margin-left: 12px;
+    h4{
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        margin-bottom: 19px;
+    }
+    p{
+        line-height: 1.5rem;
+        margin-bottom: 1em;
+    }
+}
+.order{
+    background-color: #f6f4f3;
+    padding-bottom: 50px;
+    // padding-left: 5%;
+    // padding-right: 5%;
+    h3{
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: center;
+        padding: 50px 0 38px 0;
+    }
+    .wrap{
+        display: flex;
+        align-items: start;
+        @include ipad(){
+            flex-wrap: wrap;
+        }
+    }
+    img{
+        display: block; 
+        @include ipad(){
+            width: 100%;
+        }
+    }
+    form{
+        margin-left: 20px;
+        flex-grow: 1;
+        @include ipad(){
+            margin-top: 30px;
+            margin-left: 0;
+        }
+        fieldset{
+            padding-top: 0;
+        }
+        label{
+            line-height: 1.25rem;
+            margin-bottom: 6px;
+            margin-top: 0;
+        }
+        input[type=email], input[type=text], input[type=tel]{
+            width: 100%;
+            margin-bottom: 12px;
+            padding: 5px 9px;
+        }
+        .yesNo{
+            display: inline-block;
+            margin-right: 36px;
+        }
+    }
+    .submitBtn{
+        margin-top: 25px;
+        display: flex;
+        justify-content: flex-end;
+        .pure-button{
+            margin-left: 11px;
+            padding: .3em 1em;
+        }
+    }
+    .pure-button-orange{
+        background-color: #F56C23;
+    }
+}
+footer{
+    .wrap{
+        display: flex;
+        justify-content: space-between;
+        @include ipad(){
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+    }
+}
+.footer-info{
+    display: flex;
+    @include ipad(){
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+    h2{
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-bottom: 16px;
+    }
+    p,li{
+        max-width: 300px;
+        line-height: 1.25rem;
+    }
+    ul{
+        list-style-type: disc;
+    }
+}
+.footer-text{
+    margin: 50px 35px 50px 0px; 
+    @include ipad(){
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    ul{
+        @include ipad(){
+            margin-left: 10%;
+        }
+    }
+}
+.footer-logo{
+    display: block;
+    background-image: url(../img/logo_l@svg.svg);
+    width: 245px;
+    height: 49px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 50px 0px 22px 0;
+    @include ipad(){
+        margin: 0px 0px 22px 0;
+    }
+}
+.shareLinks{
+    display: flex;
+    justify-content: flex-end;
+    @include ipad(){
+        margin-bottom: 50px;
+    }
+    a{
+        display: block;
+        font-size: 2.25rem;
+        margin-left: 12px;
+    }
+    li:nth-child(1) a{
+        color: #DB4437;
+    }
+    li:nth-child(2) a{
+        color: #41ABE1;
+    }
+    li:nth-child(3) a{
+        color: #3A5795;
+    }
+}
