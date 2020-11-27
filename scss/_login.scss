@@ -1,0 +1,72 @@
+.panel-dashBoard{
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin: 5px 0 35px 0;
+        line-height: 1.25rem;
+    }
+    .pure-form{
+        padding: 15px;
+        border-top: 3px solid #F56C23;
+        box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+        @include rwd(375px){
+            width: 90%;
+        }
+        h3{
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        label{
+            line-height: 21px;
+            font-weight: bold;
+        }
+    }
+    .icon-input{
+        position: relative;
+        i{
+            position: absolute;
+            top: 0.6rem;
+            left: 0.6rem;
+        }
+        input{
+            text-indent: 1.5rem;
+        }
+    }
+    .pure-form-message{
+        color: #F56C23;
+        line-height: 1.1rem;
+        margin-bottom: 30px;
+    }
+}
+.login-panel{
+    .pure-form{
+        width: 300px;
+        input{
+            width: 100%;
+            &[type=email]{
+                margin-bottom: 15px;
+            }
+        }
+        button[type=submit]{
+            @include rwd(480px){
+                margin: 0;
+            }
+        }
+    }
+    .btn{
+        display: flex;
+        justify-content: space-between;
+        a{
+            margin-right: 20px;
+        }
+        a,button{
+            flex-grow: 1;
+        }
+    }
+}

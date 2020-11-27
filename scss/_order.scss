@@ -1,0 +1,238 @@
+.order{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    @include ipad(){
+        flex-direction: column;
+    }  
+}
+.order-filter{
+    width: 23%;
+    @include ipad(){
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    ul{
+        list-style: none;
+        a{
+            text-decoration: none;
+            display: block;
+            line-height: 2rem;
+            padding-left: 5px;
+            color: #3D1101;
+            border-bottom: 2px solid #3D1101;
+            &:hover{
+                background-color: #3D1101;
+                color: #fff;
+            }
+            &.active{
+                background-color: #3D1101;
+                color: #fff;
+            }
+        }
+    }
+}
+.filter-title{
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    i{
+        display: block;
+        margin-right: 15px;
+        font-size: 1.5rem;
+    }
+    h3{
+        font-size: 1.25rem;
+    }
+}
+.order-content{
+    width: 75%;
+    @include ipad(){
+        width: 100%;
+    }
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+        // width: 95%;
+        @include ipad(){
+            flex-direction: column;
+            align-items: flex-end;
+            // width: 100%;
+        }
+        .search{
+            position: relative;
+            width: 60%;
+            @include ipad(){
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            input{
+                height: 2rem;
+                border: 3px solid #3D1101;
+                background-color: #efe9e7;
+                width: 100%;
+            }
+            a{
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: #3D1101;
+                color: #ffffff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+        .buyChart{
+            display: flex;
+            align-items: center;
+            @include ipad(){
+                margin-right: 0;
+            }
+            span{
+                margin: 0 10px;
+            }
+            a{
+                color:  #3D1101;
+                font-size: 1.5rem;
+            }
+            .icon{
+                position: relative;
+                p{
+                    font-size: 12px;
+                    color: #FFFFFF;
+                    background-color: #FF5E45;
+                    border-radius: 50%;
+                    position: absolute;
+                    width: 1rem;
+                    height: 1rem;
+                    text-align: center;
+                    top: -7px;
+                    right: -7px;
+                }
+            }
+        }
+    }
+    .card{
+        display: flex;
+        flex-wrap: wrap;
+        //因為 body 有下 overflow-x: hidden; 所以不會跑版
+        margin-right: -2%;
+        .card-content{
+            width: 31.3333%;
+            margin-right: 2%;
+            box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-bottom: 30px;
+            @include ipad(){
+                width: 48%;
+            }
+            @include rwd(540px){
+                width: 100%;
+                margin-right: 0;
+            }
+            img{
+                object-fit: cover;
+                margin-bottom: 16px;
+                &:hover{
+                    transform: scale(1.1);
+                    transition: all 0.2s;
+                }
+            }
+            .favorite{
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                color: #ffffff;
+            }
+            h3{
+                font-size: 1.25rem;
+                line-height: 1.8rem;
+            }
+            p{
+                margin-bottom: 8px;
+                font-size: 0.5rem;
+            }
+            .hr{
+                width: 91px;
+                height: 1.5px;
+                background-color: #3D1101;
+                margin-bottom: 20px;
+            }
+            .price{
+                font-style: italic;
+                font-weight: bold;
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    .addChart{
+        width: 90%;
+        line-height: 28px;
+        color: #FF5E45;
+        border: 3px solid #FF5E45;
+        text-align: center;
+        margin-bottom: 14px;
+        &:hover{
+            color: #ffffff;
+            background-color: #FF5E45;
+            transition: all 0.2s;
+        }
+    }
+    .card-img-box{
+        overflow: hidden;
+    }
+}
+//緞帶的定位會導致出現 x 軸，所以在 body 下 overflow-x: hidden;
+.ribbon{
+    position: absolute;
+    top: 15px;
+    right: -32px;
+    width: 120px;
+    height: 0;
+    border-bottom: 25px solid #00e6c0;
+    border-right: 25px solid transparent;
+    border-left: 25px solid transparent;
+    transform: rotate(45deg);
+    span{
+        display: block;
+        background-color:#00e6c0;
+        color: #ffffff;
+        font-weight: bold;
+        white-space: nowrap;
+        text-align: center;
+        line-height: 25px;
+
+    }
+    .ribbonT, .ribbonB{
+        position: absolute;
+        border-top: 5px solid #00856f;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        z-index: -1;
+    }
+    .ribbonT{
+        left: -25px;
+    }
+    .ribbonB{
+        right: -25px;
+    }
+    &.hot{
+        border-bottom: 25px solid #FF5E45;
+        span{
+            background-color: #FF5E45;
+        }
+        .ribbonT, .ribbonB{
+            border-top: 5px solid red;
+        }
+    }
+}
