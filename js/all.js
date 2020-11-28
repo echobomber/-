@@ -35,5 +35,55 @@ $(document).ready(function() {
       }
     });
   });
+  //左欄篩選功能 - 立即執行函式
+  //JQuery 的變數可以用 $ 區分
+  (function(){
+    let $cardContent = $('.card-content');
+    let $filterBtn = $('.order-filter ul');
+    let tagged = {};
+    $cardContent.each(function(){
+      let card = this;
+      let tags = $(this).data('tags');
+      if(tags){
+        tags.split(',').forEach(function(tagName){
+          if(tagged[tagName] == null){
+            tagged[tagName] = [];
+          }
+          tagged[tagName].push(card);
+        });
+      }
+    });
+    // console.log(tagged);
+    $('<li/>',{
+      html: `<a href="#">全部 (${$cardContent.length})</a>`,
+      class: 'active',
+      click: function(e){
+        e.preventDefault();
+        $(this)
+          .addClass('active')
+          .siblings()
+          .removeClass('active');
+        $cardContent.show();
+      }
+    }).appendTo($filterBtn);
+    //
+    $.each(tagged, function(tagName){
+      $('<li/>',{
+        html: `<a href="#">${tagName} (${tagged[tagName].length})</a>`,
+        click: function(e){
+          e.preventDefault();
+          $(this)
+            .addClass('active')
+            .siblings()
+            .removeClass('active');
+          $cardContent
+            .hide()
+            .filter(tagged[tagName])
+            .show();
+        }
+      }).appendTo($filterBtn);
+    });
+  }());
+  //
 });
 
